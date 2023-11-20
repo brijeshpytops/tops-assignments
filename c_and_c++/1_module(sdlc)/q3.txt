@@ -1,0 +1,62 @@
+What is SDLC? Explain each phase of SDLC
+
+SDLC (Software Development Life Cycle):
+---------------------------------------
+SDLC is a systematic process for planning, creating, testing, deploying, and maintaining information systems. It provides a structured approach to software development and is designed to produce high-quality software that meets or exceeds customer expectations. The SDLC consists of several phases, each with its specific goals and activities. The typical phases of SDLC are as follows:
+
+1. Planning:
+------------
+Objective: Define the scope, purpose, and objectives of the project. Identify constraints, risks, and resources.
+Activities:
+Conduct feasibility studies.
+Define project scope and requirements.
+Develop a project plan, including timelines and resource allocation.
+Assess risks and plan for risk management.
+
+2. Feasibility Study:
+---------------------
+Objective: Evaluate the technical, operational, and economic feasibility of the proposed system.
+Activities:
+Examine technical aspects, such as hardware and software requirements.
+Assess operational feasibility by considering how well the system solves the problem.
+Evaluate economic feasibility by analyzing costs and benefits.
+
+3. Design:
+----------
+Objective: Create a blueprint for the software system based on the requirements.
+Activities:
+System Design: Define overall system architecture and components.
+High-Level Design: Develop a detailed representation of the system's architecture.
+Detailed Design: Specify data structures, algorithms, and interfaces.
+User Interface Design: Design the system's user interface.
+
+4. Implementation (Coding):
+---------------------------
+Objective: Transform the design into actual code and implement the system.
+Activities:
+Write code based on the detailed design.
+Conduct unit testing to ensure individual components work as expected.
+Integrate components into a complete system.
+
+5. Testing:
+-----------
+Objective: Verify that the software functions correctly and meets the specified requirements.
+Activities:
+Conduct various testing activities, including unit testing, integration testing, system testing, and user acceptance testing.
+Identify and fix defects.
+
+6. Deployment:
+--------------
+Objective: Release the software to end-users or customers.
+Activities:
+Develop deployment plans.
+Install the software on target environments.
+Provide training and support to end-users.
+
+7. Maintenance and Support:
+---------------------------
+Objective: Ensure that the software remains effective and efficient over time.
+Activities:
+Address bug fixes and issues reported by users.
+Make enhancements or updates to adapt to changes in requirements or technology.
+Provide ongoing support and maintenance.
