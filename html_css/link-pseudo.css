@@ -1,0 +1,22 @@
+/* Normal link state */
+a {
+    color: #0077cc; /* Link color */
+    text-decoration: none; /* Remove underline */
+  }
+  
+  /* Hover state when the mouse is over the link */
+  a:hover {
+    color: #004466; /* Change link color on hover */
+    text-decoration: underline; /* Add underline on hover */
+  }
+  
+  /* Visited state for links that have been visited */
+  a:visited {
+    color: #551a8b; /* Visited link color */
+  }
+  
+  /* Active state for links that are being clicked */
+  a:active {
+    color: #ff0000; /* Active link color */
+  }
+  

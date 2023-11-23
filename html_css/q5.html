@@ -1,0 +1,64 @@
+<!-- Create a Table Of college Management system using row span & col span. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Management System</title>
+    <style>
+        body{text-align: center;}
+        h1{
+            color:#103045;
+        }
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin: 20px auto;
+            
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            /* text-align: left; */
+            
+        }
+        th {
+            background-color: #103045;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>College Management System</h1>
+
+    <table>
+        <tr>
+            <th rowspan="2">Student name</th>
+            <th colspan="3">Courses</th>
+            <th rowspan="2">CGPA</th>
+        </tr>
+        <tr>
+            <th>C and c++</th>
+            <th>Python</th>
+            <th>Java</th>
+        </tr>
+        <tr>
+            <td>Eric shah</td>
+            <td>90</td>
+            <td>85</td>
+            <td>92</td>
+            <td>8.9</td>
+        </tr>
+        <tr>
+            <td>himani patel</td>
+            <td>88</td>
+            <td>90</td>
+            <td>85</td>
+            <td>7.5</td>
+        </tr>
+        <!-- Add more rows as needed -->
+    </table>
+
+</body>
+</html>

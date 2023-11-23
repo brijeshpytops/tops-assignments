@@ -1,0 +1,119 @@
+<!-- reate simple three pages using External CSS, Internal CSS, and Inline CSS.  -->
+
+Each page will use a different method for applying CSS: External CSS, Internal CSS, and Inline CSS.
+
+External CSS (style.css):
+-------------------------
+/* style.css */
+body {
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+.content {
+    padding: 20px;
+}
+
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+
+2. Internal CSS:
+---------------
+<!-- internal_css.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: #e6e6e6;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .footer {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+    <title>Internal CSS</title>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Internal CSS Page</h1>
+    </div>
+
+    <div class="content">
+        <p>This is a page with internal CSS styling.</p>
+    </div>
+
+    <div class="footer">
+        <p>Footer content here.</p>
+    </div>
+
+</body>
+</html>
+
+
+3. Inline CSS:
+-------------
+<!-- inline_css.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inline CSS</title>
+</head>
+<body style="background-color: #ccffff; font-family: 'Times New Roman', Times, serif; margin: 0; padding: 0;">
+
+    <div style="background-color: #9900cc; color: white; text-align: center; padding: 15px;">
+        <h1>Inline CSS Page</h1>
+    </div>
+
+    <div style="padding: 20px;">
+        <p>This is a page with inline CSS styling.</p>
+    </div>
+
+    <div style="background-color: #9900cc; color: white; text-align: center; padding: 10px; position: fixed; bottom: 0; width: 100%;">
+        <p>Footer content here.</p>
+    </div>
+
+</body>
+</html>

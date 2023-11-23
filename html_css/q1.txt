@@ -1,0 +1,26 @@
+Define the terms: Website, Webpage, Web browser, Web server, HTML,
+CSS
+
+Website:
+--------
+A website is a collection of related web pages that are typically identified by a common domain name. It is a set of interconnected web pages usually served from a single web domain and accessible via the Internet. Websites can contain various types of content, such as text, images, videos, and interactive elements.
+
+Webpage:
+--------
+A webpage is a single document or page on the World Wide Web. It can contain text, images, multimedia, and hyperlinks to other webpages. Webpages are written in languages such as HTML (Hypertext Markup Language) and are viewed using web browsers.
+
+Web Browser:
+------------
+A web browser is a software application that allows users to access and navigate the World Wide Web. Popular web browsers include Chrome, Firefox, Safari, and Edge. Browsers interpret and display web content, including HTML documents, images, and multimedia, and provide a user interface for users to interact with websites.
+
+Web Server:
+-----------
+A web server is a software application or hardware device that stores, processes, and serves web content to users. When a user requests a webpage, the web server processes the request and sends the requested files (HTML, images, etc.) to the user's web browser, which then renders the content. Common web server software includes Apache, Nginx, and Microsoft Internet Information Services (IIS).
+
+HTML (Hypertext Markup Language):
+---------------------------------
+HTML is the standard markup language used to create and structure content on the World Wide Web. It provides a set of elements or tags that define the structure of a webpage, such as headings, paragraphs, links, images, and more. HTML is essential for creating the basic structure of web content and is often used in conjunction with CSS (Cascading Style Sheets) and JavaScript to enhance the presentation and interactivity of webpages.
+
+CSS (Cascading Style Sheets):
+-----------------------------
+CSS is a style sheet language used to describe the presentation of a document written in HTML or XML. It allows web developers to control the layout, appearance, and style of multiple web pages simultaneously. CSS separates the structure and content of a webpage from its visual presentation, making it easier to maintain and update the design of a website.

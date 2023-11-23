@@ -1,0 +1,101 @@
+<!-- In how many ways can a CSS be integrated as a web page? -->
+
+<!-- CSS (Cascading Style Sheets) can be integrated into a web page in several ways. The choice of integration method depends on factors such as the complexity of the project, the need for reusability, and personal or project preferences. Here are the main ways CSS can be integrated into a web page: -->
+
+Inline Styles:
+--------------
+<!-- CSS styles can be applied directly to HTML elements using the style attribute. This is known as inline styling. -->
+
+Example : 
+#########
+<p style="color: blue; font-size: 16px;">This is a paragraph with inline styles.</p>
+
+Internal Styles (Embedded or Embedded Stylesheet):
+--------------------------------------------------
+<!-- 
+CSS styles can be defined within the HTML document using the <style> element in the document's <head> section. 
+-->
+
+Example : 
+#########
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: #f2f2f2;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            color: #3498db;
+        }
+    </style>
+    <title>Internal Styles Example</title>
+</head>
+<body>
+    <h1>This is a heading</h1>
+    <p>This is a paragraph.</p>
+</body>
+</html>
+
+
+External Styles (External Stylesheet):
+--------------------------------------
+<!-- CSS styles can be placed in an external file with a .css extension and linked to the HTML document using the <link> element. -->
+
+Example (styles.css):
+#####################
+
+body {
+    background-color: #f2f2f2;
+    font-family: Arial, sans-serif;
+}
+h1 {
+    color: #3498db;
+}
+
+Example (index.html):
+#####################
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>External Styles Example</title>
+</head>
+<body>
+    <h1>This is a heading</h1>
+    <p>This is a paragraph.</p>
+</body>
+</html>
+
+
+Importing Styles (Import Rule):
+-------------------------------
+<!-- CSS styles can be imported into another CSS file using the @import rule. -->
+
+Example (main.css):
+###################
+
+@import url("styles.css");
+/* Other styles for main.css */
+
+
+Example (index.html):
+#####################
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>Import Styles Example</title>
+</head>
+<body>
+    <h1>This is a heading</h1>
+    <p>This is a paragraph.</p>
+</body>
+</html>
