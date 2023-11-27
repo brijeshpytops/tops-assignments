@@ -1,0 +1,11 @@
+Q.What is the difference between OOP and POP? 
+1-->In OOP you have to create a object of class then with the use of object u can access the data members and function.
+    In the POP you can directly call the function and access function.
+
+2-->In the Comparition between OOP and POP data are secured in OOP rather than POP.
+
+3-->OOP is mostly used for larger functionallity.
+    POP is mostly used for smaller operation.
+
+4-->In OOP you can used other class property and behaviour with the feature of Inheritance.
+    In POP you cant directly use the class and property of other function.
