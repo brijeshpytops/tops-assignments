@@ -1,0 +1,382 @@
+1. Create Table Name : Student and Exam
+
+students :
+
+create table students(roll_no int auto_increment primary key, name varchar(255), branch varchar(255));
+
+mysql> describe students;
++---------+--------------+------+-----+---------+----------------+
+| Field   | Type         | Null | Key | Default | Extra          |
++---------+--------------+------+-----+---------+----------------+
+| roll_no | int          | NO   | PRI | NULL    | auto_increment |
+| name    | varchar(255) | YES  |     | NULL    |                |
+| branch  | varchar(255) | YES  |     | NULL    |                |
++---------+--------------+------+-----+---------+----------------+
+
+Exam :
+
+create table exam(roll_no int REFERENCES students(roll_no), s_code varchar(255), marks int, p_code varchar(255));
+
+mysql> desc exam;
++---------+--------------+------+-----+---------+-------+
+| Field   | Type         | Null | Key | Default | Extra |
++---------+--------------+------+-----+---------+-------+
+| roll_no | int          | YES  |     | NULL    |       |
+| s_code  | varchar(255) | YES  |     | NULL    |       |
+| marks   | int          | YES  |     | NULL    |       |
+| p_code  | varchar(255) | YES  |     | NULL    |       |
++---------+--------------+------+-----+---------+-------+
+
+mysql> show tables;
++-----------------+
+| Tables_in_tasks |
++-----------------+
+| exam            |
+| students        |
++-----------------+
+
+
+2.
+
+create table person_details(first_name varchar(255), last_name varchar(255), address text, city varchar(255), age int);
+
+mysql> desc person_details;
++------------+--------------+------+-----+---------+-------+
+| Field      | Type         | Null | Key | Default | Extra |
++------------+--------------+------+-----+---------+-------+
+| first_name | varchar(255) | YES  |     | NULL    |       |
+| last_name  | varchar(255) | YES  |     | NULL    |       |
+| address    | text         | YES  |     | NULL    |       |
+| city       | varchar(255) | YES  |     | NULL    |       |
+| age        | int          | YES  |     | NULL    |       |
++------------+--------------+------+-----+---------+-------+
+
+3.
+
+create table employee(emp_id int auto_increment primary key, first_name varchar(255), last_name varchar(255), salary int, joining_date varchar(255), department varchar(255));
+
+mysql> desc employee;
++--------------+--------------+------+-----+---------+----------------+
+| Field        | Type         | Null | Key | Default | Extra          |
++--------------+--------------+------+-----+---------+----------------+
+| emp_id       | int          | NO   | PRI | NULL    | auto_increment |
+| first_name   | varchar(255) | YES  |     | NULL    |                |
+| last_name    | varchar(255) | YES  |     | NULL    |                |
+| salary       | int          | YES  |     | NULL    |                |
+| joining_date | varchar(255) | YES  |     | NULL    |                |
+| department   | varchar(255) | YES  |     | NULL    |                |
++--------------+--------------+------+-----+---------+----------------+
+
+
+mysql> INSERT INTO employee (first_name, last_name, salary, joining_date, department)
+    -> VALUES
+    ->   ('Tom', 'Smith', 50000, '2023-01-15', 'IT'),
+    ->   ('Thomas', 'Johnson', 60000, '2023-02-20', 'HR'),
+    ->   ('Tommy', 'Williams', 55000, '2023-03-10', 'Finance'),
+    ->   ('John', 'Tomlinson', 48000, '2023-04-05', 'Marketing'),
+    ->   ('Sarah', 'Tomson', 52000, '2023-05-12', 'IT');
+
+INSERT INTO incentive (emp_id, incentive_date, incentive_amount)
+    -> VALUES
+    ->   (1, '2023-01-15', 5000),
+    ->   (2, '2023-02-20', 6000),
+    ->   (3, '2023-03-10', 5500),
+    ->   (4, '2023-04-05', 4800),
+    ->   (5, '2023-05-12', 5200),
+    ->   (1, '2023-06-01', 3500),
+    ->   (3, '2023-07-15', 4000);
+
+create table incentive(emp_id int references employee(emp_id), incentive_date varchar(255), incentive_amount int);
+
+mysql> desc incentive;
++------------------+--------------+------+-----+---------+-------+
+| Field            | Type         | Null | Key | Default | Extra |
++------------------+--------------+------+-----+---------+-------+
+| emp_id           | int          | YES  |     | NULL    |       |
+| incentive_date   | varchar(255) | YES  |     | NULL    |       |
+| incentive_amount | int          | YES  |     | NULL    |       |
++------------------+--------------+------+-----+---------+-------+
+
+
+mysql> -- Inserting fake data into the incentive table
+mysql> INSERT INTO incentive (emp_id, incentive_date, incentive_amount)
+    -> VALUES
+    ->   (1, '2023-01-15', 500),
+    ->   (2, '2023-02-20', 600),
+    ->   (3, '2023-03-10', 550),
+    ->   (4, '2023-04-05', 480),
+    ->   (5, '2023-05-12', 520);
+
+
+
+
+Get First_Name from employee table using Tom name “Employee Name”.
+
+mysql> SELECT first_name
+    -> FROM employee
+    -> WHERE first_name = 'Tom';
++------------+
+| first_name |
++------------+
+| Tom        |
++------------+
+
+Get FIRST_NAME, Joining Date, and Salary from employee table. 
+
+mysql> SELECT first_name, joining_date, salary
+    -> FROM employee;
++------------+--------------+--------+
+| first_name | joining_date | salary |
++------------+--------------+--------+
+| Tom        | 2023-01-15   |  50000 |
+| Thomas     | 2023-02-20   |  60000 |
+| Tommy      | 2023-03-10   |  55000 |
+| John       | 2023-04-05   |  48000 |
+| Sarah      | 2023-05-12   |  52000 |
++------------+--------------+--------+
+
+
+Get all employee details from the employee table order by First_Name
+Ascending and Salary descending?
+
+mysql> SELECT *
+    -> FROM employee
+    -> ORDER BY first_name ASC, salary DESC;
++--------+------------+-----------+--------+--------------+------------+
+| emp_id | first_name | last_name | salary | joining_date | department |
++--------+------------+-----------+--------+--------------+------------+
+|      4 | John       | Tomlinson |  48000 | 2023-04-05   | Marketing  |
+|      5 | Sarah      | Tomson    |  52000 | 2023-05-12   | IT         |
+|      2 | Thomas     | Johnson   |  60000 | 2023-02-20   | HR         |
+|      1 | Tom        | Smith     |  50000 | 2023-01-15   | IT         |
+|      3 | Tommy      | Williams  |  55000 | 2023-03-10   | Finance    |
++--------+------------+-----------+--------+--------------+------------+
+
+
+Get employee details from employee table whose first name contains ‘J’.
+
+mysql> SELECT *
+    -> FROM employee
+    -> WHERE first_name LIKE '%J%';
++--------+------------+-----------+--------+--------------+------------+
+| emp_id | first_name | last_name | salary | joining_date | department |
++--------+------------+-----------+--------+--------------+------------+
+|      4 | John       | Tomlinson |  48000 | 2023-04-05   | Marketing  |
++--------+------------+-----------+--------+--------------+------------+
+
+Get department wise maximum salary from employee table order by salary
+ascending?
+
+mysql> SELECT department, MAX(salary) AS max_salary
+    -> FROM employee
+    -> GROUP BY department
+    -> ORDER BY max_salary ASC;
++------------+------------+
+| department | max_salary |
++------------+------------+
+| Marketing  |      48000 |
+| IT         |      52000 |
+| Finance    |      55000 |
+| HR         |      60000 |
++------------+------------+
+
+
+
+Select first_name, incentive amount from employee and incentives table for
+those employees who have incentives and incentive amount greater than 3000
+
+
+mysql> SELECT e.first_name, i.incentive_amount
+    -> FROM employee e
+    -> JOIN incentive i ON e.emp_id = i.emp_id
+    -> WHERE i.incentive_amount > 3000;
++------------+------------------+
+| first_name | incentive_amount |
++------------+------------------+
+| Tom        |             5000 |
+| Thomas     |             6000 |
+| Tommy      |             5500 |
+| John       |             4800 |
+| Sarah      |             5200 |
+| Tom        |             3500 |
+| Tommy      |             4000 |
++------------+------------------+
+
+
+Create After Insert trigger on Employee table which insert records in view
+table 
+
+
+mysql> -- Creating the employee_view table
+mysql> CREATE TABLE employee_view (
+    ->   emp_id INT,
+    ->   first_name VARCHAR(255),
+    ->   last_name VARCHAR(255),
+    ->   salary INT,
+    ->   joining_date VARCHAR(255),
+    ->   department VARCHAR(255),
+    ->   PRIMARY KEY (emp_id)
+    -> );
+
+
+mysql> -- Creating the AFTER INSERT trigger
+mysql> DELIMITER //
+mysql>
+mysql> CREATE TRIGGER after_employee_insert
+    -> AFTER INSERT ON employee
+    -> FOR EACH ROW
+    -> BEGIN
+    ->   INSERT INTO employee_view (emp_id, first_name, last_name, salary, joining_date, department)
+    ->   VALUES (NEW.emp_id, NEW.first_name, NEW.last_name, NEW.salary, NEW.joining_date, NEW.department);
+    -> END;
+    -> //
+Query OK, 0 rows affected (0.01 sec)
+
+mysql>
+mysql> DELIMITER ;
+
+
+
+mysql> -- Inserting fake data into the employee table
+mysql> INSERT INTO employee (first_name, last_name, salary, joining_date, department)
+    -> VALUES
+    ->   ('John', 'Doe', 60000, '2022-01-15', 'IT'),
+    ->   ('Jane', 'Smith', 70000, '2022-02-20', 'HR');
+Query OK, 2 rows affected (0.01 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+
+mysql> select * from employee_view;
++--------+------------+-----------+--------+--------------+------------+
+| emp_id | first_name | last_name | salary | joining_date | department |
++--------+------------+-----------+--------+--------------+------------+
+|      6 | John       | Doe       |  60000 | 2022-01-15   | IT         |
+|      7 | Jane       | Smith     |  70000 | 2022-02-20   | HR         |
++--------+------------+-----------+--------+--------------+------------+
+
+
+4. Create table given below: Salesperson and Customer
+
+
+
+mysql> CREATE TABLE Salesperson (
+    ->   sno INT PRIMARY KEY,
+    ->   sname VARCHAR(255),
+    ->   city VARCHAR(255),
+    ->   comm DECIMAL(10, 2)
+    -> );
+Query OK, 0 rows affected (0.01 sec)
+
+
+mysql> -- Inserting fake data into the Salesperson table
+mysql> INSERT INTO Salesperson (sno, sname, city, comm)
+    -> VALUES
+    ->   (1, 'John Doe', 'New York', 0.1),
+    ->   (2, 'Jane Smith', 'Los Angeles', 0.15),
+    ->   (3, 'Bob Johnson', 'Chicago', 0.12),
+    ->   (4, 'Alice Williams', 'San Francisco', 0.08),
+    ->   (5, 'Charlie Brown', 'Seattle', 0.11);
+Query OK, 5 rows affected (0.01 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+mysql> INSERT INTO Salesperson (sno, sname, city, comm)
+    -> VALUES
+    ->   (6, 'John Doe', 'London', 0.15),
+    ->   (7, 'Jane Smith', 'New York', 0.10),
+    ->   (8, 'Bob Johnson', 'London', 0.14),
+    ->   (9, 'Alice Williams', 'Chicago', 0.08),
+    ->   (10, 'Charlie Brown', 'London', 0.13);
+Query OK, 5 rows affected (0.00 sec)
+
+
+mysql> CREATE TABLE Customer (
+    ->   cnm INT PRIMARY KEY,
+    ->   cname VARCHAR(255),
+    ->   city VARCHAR(255),
+    ->   rating INT,
+    ->   sno INT,
+    ->   FOREIGN KEY (sno) REFERENCES Salesperson(sno)
+    -> );
+Query OK, 0 rows affected (0.02 sec)
+
+
+mysql> INSERT INTO Customer (cnm, cname, city, rating, sno)
+    -> VALUES
+    ->   (101, 'ABC Corp', 'New York', 4, 1),
+    ->   (102, 'XYZ Inc', 'Los Angeles', 5, 2),
+    ->   (103, 'LMN Ltd', 'Chicago', 3, 3),
+    ->   (104, 'PQR Co', 'San Francisco', 4, 4),
+    ->   (105, 'EFG Ltd', 'Seattle', 5, 5),
+    ->   (106, 'UVW Enterprises', 'Los Angeles', 4, 2);
+Query OK, 6 rows affected (0.00 sec)
+Records: 6  Duplicates: 0  Warnings: 0
+
+
+mysql> INSERT INTO Customer (cnm, cname, city, rating, sno)
+    -> VALUES
+    ->   (101, 'ABC Corp', 'London', 4, 6),
+    ->   (102, 'XYZ Inc', 'New York', 5, 7),
+    ->   (103, 'LMN Ltd', 'Chicago', 3, 8),
+    ->   (104, 'PQR Co', 'San Francisco', 4, 9),
+    ->   (105, 'EFG Ltd', 'London', 5, 10);
+Query OK, 5 rows affected (0.00 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+a) All orders for more than $1000. 
+
+Names and cities of all salespeople in London with commission above 0.12
+mysql> SELECT sname, city
+    -> FROM Salesperson
+    -> WHERE city = 'London' AND comm > 0.12;
++---------------+--------+
+| sname         | city   |
++---------------+--------+
+| John Doe      | London |
+| Bob Johnson   | London |
+| Charlie Brown | London |
++---------------+--------+
+
+All salespeople either in Barcelona or in London
+
+mysql> SELECT sname, city
+    -> FROM Salesperson
+    -> WHERE city IN ('Barcelona', 'London');
++---------------+--------+
+| sname         | city   |
++---------------+--------+
+| John Doe      | London |
+| Bob Johnson   | London |
+| Charlie Brown | London |
++---------------+--------+
+
+All salespeople with commission between 0.10 and 0.12. (Boundary values
+should be excluded). 
+
+
+mysql> SELECT sname, city, comm
+    -> FROM Salesperson
+    -> WHERE comm > 0.10 AND comm < 0.12;
++---------------+---------+------+
+| sname         | city    | comm |
++---------------+---------+------+
+| Charlie Brown | Seattle | 0.11 |
++---------------+---------+------+
+
+
+mysql> INSERT INTO Customer (cnm, cname, city, rating, sno)
+    -> VALUES
+    ->   (1, 'Test Customer', 'Rome', 120, 1);
+Query OK, 1 row affected (0.00 sec)
+
+All customers excluding those with rating <= 100 unless they are located in
+Rome 
+
+
+mysql> SELECT cname, city, rating
+    -> FROM Customer
+    -> WHERE NOT (rating <= 100 AND city <> 'Rome');
++---------------+------+--------+
+| cname         | city | rating |
++---------------+------+--------+
+| Test Customer | Rome |    120 |
++---------------+------+--------+

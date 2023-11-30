@@ -1,3 +1,0 @@
-What is DFD? Create a DFD diagram on Flipkart
-
-A DFD (Data Flow Diagram) is a graphical representation of how data flows through a system, illustrating the processes, data stores, external entities, and data flows involved. It's a powerful tool for analyzing and designing information systems. 
