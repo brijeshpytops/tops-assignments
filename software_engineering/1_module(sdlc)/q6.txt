@@ -2,60 +2,6 @@ What is Use case Diagram? Create a use-case on bill payment on paytm.
 
 A use case diagram is a visual representation of the interactions between different actors (users or systems) and a system. It helps to illustrate the different ways a system can be used by various actors and the interactions between them.
 
-For a bill payment use case on Paytm, we can identify the following actors:
+Usecase Diagrams(SEE IN IMAGES) -
 
-User: The individual using the Paytm application to pay bills.
-Paytm System: The system itself, which facilitates bill payments.
-
-
-Now, let's create a simple use case diagram:
-
-+--------------------------+
-|       Paytm System       |
-+--------------------------+
-          |
-+---------|----------------+
-|         |                |
-|   <<include>>           |
-| Payment Process         |
-|         |                |
-+---------v----------------+
-          |
-+--------------------------+
-|           User           |
-+--------------------------+
-          |
-+---------|----------------+
-|         |                |
-|       <<include>>        |
-|  Browse Bills            |
-|         |                |
-+---------v----------------+
-          |
-+---------|----------------+
-|         |                |
-|  <<extend>>              |
-|  View Transaction History|
-|         |                |
-+---------v----------------+
-
-
-Explanation:
-------------
-Paytm System: 
--------------
-Represents the Paytm application or system.
-User: Represents the user interacting with the Paytm system.
-Use Cases:
-
-Payment Process (include): 
---------------------------
-This use case includes the steps involved in the payment process, such as selecting a bill, entering payment details, and confirming the payment.
-
-Browse Bills (include): 
------------------------
-This use case includes the steps involved in browsing and selecting bills for payment.
-
-View Transaction History (extend): 
-----------------------------------
-This use case can be triggered optionally after the payment process to view the transaction history. It is an extension of the main flow and is optional for the user.
+Billing_usecase.png
