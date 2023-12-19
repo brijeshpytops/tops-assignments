@@ -1,0 +1,18 @@
+What do you understand By Database?
+
+
+A database is a structured collection of data that is organized in a way that makes it easy to manage, access, and update. It is designed to efficiently store and retrieve large amounts of information. In a database, data is typically organized into tables, which consist of rows and columns. Each row in a table represents a record, while each column represents a specific attribute or field.
+
+Key components of a database include:
+
+Tables: These are the main structures in a database where data is stored. Each table is organized into rows and columns, with each row representing a unique record and each column representing a specific attribute.
+
+Fields or Columns: These are individual pieces of data stored in a table. Each column has a name and a data type that defines the kind of information it can store.
+
+Records or Rows: Each row in a table represents a complete set of data for a particular entity or item. For example, in a database of employees, each row would represent a single employee with all associated information.
+
+Primary Key: A primary key is a unique identifier for each record in a table. It ensures that each record can be uniquely identified and helps establish relationships between tables.
+
+Relationships: In relational databases, tables can be related to each other based on common fields. These relationships enable the retrieval of related information from multiple tables.
+
+Queries: Queries are used to retrieve, update, or manipulate data within a database. They are typically written in a structured query language (SQL).

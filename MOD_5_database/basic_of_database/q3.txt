@@ -1,0 +1,28 @@
+What is Difference between DBMS and RDBMS?
+
+DBMS (Database Management System) and RDBMS (Relational Database Management System) are both systems that manage databases, but there are key differences between the two:
+
+Data Structure:
+
+DBMS: A DBMS can manage any type of data, including text, numbers, multimedia, etc. It does not necessarily follow a relational model, and the data may not be stored in tables with relationships.
+RDBMS: An RDBMS specifically follows the relational model. Data is organized into tables with rows and columns, and relationships between tables are established using keys.
+Data Integrity:
+
+DBMS: Data integrity features may be limited. It may not enforce relationships between tables or support features like foreign keys.
+RDBMS: RDBMS systems enforce data integrity through normalization, keys (primary and foreign keys), and referential integrity constraints.
+Complexity:
+
+DBMS: Generally less complex than RDBMS. Suitable for simpler data storage needs without the need for complex relationships and constraints.
+RDBMS: More complex due to the adherence to the relational model. It provides a more structured and organized way of storing and retrieving data, making it suitable for applications with complex data relationships.
+Scalability:
+
+DBMS: May have limitations in terms of scalability, especially when dealing with large amounts of data and complex relationships.
+RDBMS: Designed to handle scalability better. The relational model and normalization help in managing large datasets efficiently.
+Data Retrieval:
+
+DBMS: Retrieval methods may not be as sophisticated. Queries may be more straightforward but may lack the powerful querying capabilities of SQL in RDBMS.
+RDBMS: Utilizes SQL (Structured Query Language) for querying, providing a powerful and standardized way to retrieve data from the database.
+Examples:
+
+DBMS: File systems, early database systems that may not strictly follow the relational model.
+RDBMS: MySQL, PostgreSQL, Oracle Database, Microsoft SQL Server are examples of RDBMS.

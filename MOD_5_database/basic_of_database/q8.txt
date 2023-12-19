@@ -1,0 +1,25 @@
+What is SQL Key Constraints writing an Example of SQL Key Constraints
+
+In SQL, key constraints are used to define rules or conditions on columns that ensure the uniqueness and integrity of data within a table. There are different types of key constraints, including Primary Key and Unique Key. 
+
+Primary Key Constraint:
+
+A Primary Key uniquely identifies each record in a table and ensures that the column or combination of columns specified as the primary key does not contain duplicate or NULL values.
+
+CREATE TABLE employees (
+    employee_id INT PRIMARY KEY,
+    employee_name VARCHAR(50),
+    department_id INT
+);
+
+
+
+Unique Key Constraint:
+
+A Unique Key ensures that the values in a column or a combination of columns are unique across all records in the table. Unlike the primary key, a unique key can allow NULL values.
+
+CREATE TABLE departments (
+    department_id INT PRIMARY KEY,
+    department_name VARCHAR(50) UNIQUE,
+    manager_id INT UNIQUE
+);

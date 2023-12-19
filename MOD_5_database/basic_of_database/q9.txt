@@ -1,0 +1,41 @@
+What is save Point? How to create a save Point write a Query?
+
+A savepoint in a database is a point within a transaction where you can mark a specific point and later roll back to that point if needed. Savepoints are particularly useful when you want to create nested transactions within a larger transaction. They allow you to partially roll back to a specific point without affecting the entire transaction.
+
+In SQL, you can use the SAVEPOINT statement to create a savepoint within a transaction. Here's an example:
+
+-- Start a transaction
+START TRANSACTION;
+
+-- Execute some SQL statements
+INSERT INTO employees (employee_id, employee_name, department_id) VALUES (1, 'John Doe', 101);
+INSERT INTO employees (employee_id, employee_name, department_id) VALUES (2, 'Jane Smith', 102);
+
+-- Create a savepoint
+SAVEPOINT my_savepoint;
+
+-- More SQL statements
+INSERT INTO employees (employee_id, employee_name, department_id) VALUES (3, 'Bob Johnson', 101);
+INSERT INTO employees (employee_id, employee_name, department_id) VALUES (4, 'Alice Williams', 102);
+
+-- If something goes wrong, roll back to the savepoint
+ROLLBACK TO my_savepoint;
+
+-- Continue with the transaction
+INSERT INTO employees (employee_id, employee_name, department_id) VALUES (5, 'Eva Davis', 103);
+
+-- Commit the transaction
+COMMIT;
+
+
+
+
+
+In this example:
+
+We start a transaction with START TRANSACTION.
+Execute some SQL statements within the transaction.
+Create a savepoint named my_savepoint using SAVEPOINT.
+Continue with more SQL statements.
+If something goes wrong, we can roll back to the savepoint using ROLLBACK TO my_savepoint, which undoes changes made after the savepoint.
+Finally, we commit the transaction using COMMIT.

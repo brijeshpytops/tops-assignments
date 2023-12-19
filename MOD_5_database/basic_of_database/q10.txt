@@ -1,0 +1,56 @@
+What is trigger and how to create a Trigger in SQL?
+
+A trigger in SQL is a set of instructions that are automatically executed (or "triggered") in response to certain events on a particular table or view in a database. These events typically include data modification events, such as INSERT, UPDATE, DELETE, or a combination of these. Triggers are used to enforce business rules, perform actions based on changes in the database, or maintain data integrity.
+
+The basic syntax for creating a trigger in SQL is as follows:
+
+CREATE TRIGGER trigger_name
+{BEFORE | AFTER} {INSERT | UPDATE | DELETE}
+ON table_name
+[FOR EACH ROW]
+BEGIN
+    -- Trigger body (SQL statements to be executed)
+END;
+
+
+
+
+A trigger in SQL is a set of instructions that are automatically executed (or "triggered") in response to certain events on a particular table or view in a database. These events typically include data modification events, such as INSERT, UPDATE, DELETE, or a combination of these. Triggers are used to enforce business rules, perform actions based on changes in the database, or maintain data integrity.
+
+The basic syntax for creating a trigger in SQL is as follows:
+
+sql
+Copy code
+CREATE TRIGGER trigger_name
+{BEFORE | AFTER} {INSERT | UPDATE | DELETE}
+ON table_name
+[FOR EACH ROW]
+BEGIN
+    -- Trigger body (SQL statements to be executed)
+END;
+Let's break down the components of the syntax:
+
+trigger_name: The name assigned to the trigger.
+BEFORE or AFTER: Specifies whether the trigger should fire before or after the triggering event (INSERT, UPDATE, or DELETE).
+INSERT, UPDATE, or DELETE: Specifies the type of event that will trigger the execution of the trigger.
+ON table_name: Specifies the table on which the trigger is defined.
+FOR EACH ROW: This optional clause is used in row-level triggers, indicating that the trigger should be fired once for each affected row.
+BEGIN ... END: The block of SQL statements to be executed when the trigger is invoked.
+
+
+Here's a simple example of a trigger that automatically updates a modification timestamp when a row is updated in a table:
+
+CREATE TRIGGER update_timestamp_trigger
+BEFORE UPDATE
+ON employees
+FOR EACH ROW
+BEGIN
+    NEW.last_modified = NOW(); -- Assuming a column named 'last_modified' exists
+END;
+
+
+In this example:
+
+The trigger is named update_timestamp_trigger.
+It is set to fire BEFORE UPDATE on the employees table.
+The trigger body updates the last_modified column with the current timestamp (NOW()).

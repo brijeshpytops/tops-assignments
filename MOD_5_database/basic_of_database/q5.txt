@@ -1,0 +1,47 @@
+What do you understand By Data Redundancy?
+
+
+Data redundancy refers to the duplication of data within a database or information system. It occurs when the same piece of data is stored in multiple places. Redundancy can lead to several issues, including increased storage requirements, data inconsistency, and a higher risk of data anomalies. There are three main types of data redundancy:
+
+Horizontal Data Redundancy:
+
+Occurs when identical or similar data is repeated in different rows of the same database table.
+It can result from poor database design or denormalization.
+
+Example:
+| EmployeeID | EmployeeName | Department   |
+|------------|--------------|--------------|
+| 1          | John Doe     | HR           |
+| 2          | Jane Smith   | Sales        |
+| 3          | John Doe     | HR           |  <-- Redundant data
+
+
+Vertical Data Redundancy:
+
+Involves the storage of the same attribute in multiple tables.
+It can be a consequence of poor table design or denormalization.
+
+Example:
+Table: Employees
+| EmployeeID | EmployeeName | Department   |
+|------------|--------------|--------------|
+| 1          | John Doe     | HR           |
+| 2          | Jane Smith   | Sales        |
+
+Table: Departments
+| DepartmentID | DepartmentName  | Manager     |
+|--------------|-----------------|-------------|
+| HR           | Human Resources | John Doe    |  <-- Redundant data
+
+
+Temporal Data Redundancy:
+
+Involves storing the same data at different points in time.
+It can occur in systems where historical data is kept but not properly managed.
+
+Example:
+
+| EmployeeID | EmployeeName | Department   | Salary | EffectiveDate |
+|------------|--------------|--------------|--------|---------------|
+| 1          | John Doe     | HR           | 5000   | 2022-01-01    |
+| 1          | John Doe     | HR           | 5200   | 2023-01-01    |  <-- Redundant data

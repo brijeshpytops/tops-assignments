@@ -1,0 +1,24 @@
+What is DML Compiler in SQL?
+
+In SQL (Structured Query Language), a DML (Data Manipulation Language) compiler is not a term commonly used. Instead, the DML operations are typically executed by the SQL database engine or the SQL query processor rather than a separate "compiler."
+
+DML comprises the SQL commands that deal with the manipulation of data stored in a database. 
+
+The main DML statements include:
+
+SELECT: Retrieves data from one or more tables.
+
+SELECT column1, column2 FROM tablename WHERE condition;
+
+INSERT: Adds new records to a table.
+
+INSERT INTO tablename (column1, column2) VALUES (value1, value2);
+
+UPDATE: Modifies existing records in a table.
+
+UPDATE tablename SET column1 = value1 WHERE condition;
+
+DELETE: Removes records from a table.
+
+DELETE FROM tablename WHERE condition;
+
